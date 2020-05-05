@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Mainchar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Rifle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Sword.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Stone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Soldier.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8000, 20 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 67.8857, 590 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 640, 590 )
+
+[node name="World" type="Node2D"]
+
+[node name="Mainchar" parent="." instance=ExtResource( 1 )]
+position = Vector2( -3840, 1400 )
+collision_mask = 15
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 960 )
+collision_layer = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+position = Vector2( -960, 0 )
+scale = Vector2( 2, 1 )
+polygon = PoolVector2Array( -3025, 940, 4950, 940, 4950, 900, -3035, 890 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 960, 920 )
+shape = SubResource( 1 )
+
+[node name="Rifle" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2960, 1791.98 )
+collision_mask = 3
+
+[node name="Sword" parent="." instance=ExtResource( 3 )]
+position = Vector2( -147.819, 1715.65 )
+z_index = -2
+
+[node name="Stone" parent="." instance=ExtResource( 4 )]
+position = Vector2( -820, -130 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 2870, 1550 )
+scale = Vector2( 1.03113, 0.456878 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -2630, 1590 )
+scale = Vector2( 1.03113, 0.456878 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 7220, 1590 )
+scale = Vector2( 1.03113, 0.456878 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( -1760, 1270 )
+shape = SubResource( 3 )
+
+[node name="Soldier" parent="." instance=ExtResource( 5 )]
+position = Vector2( -6460, 1390 )

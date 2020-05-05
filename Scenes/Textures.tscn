@@ -1,0 +1,214 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/SoldierLimbs/RightUpperLeg.png" type="Texture" id=1]
+[ext_resource path="res://Assets/SoldierLimbs/RightLowerLeg.png" type="Texture" id=2]
+[ext_resource path="res://Assets/SoldierLimbs/RightFeet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/SoldierLimbs/LeftUpperLeg.png" type="Texture" id=4]
+[ext_resource path="res://Assets/SoldierLimbs/LeftLowerLeg.png" type="Texture" id=5]
+[ext_resource path="res://Assets/SoldierLimbs/LeftFeet.png" type="Texture" id=6]
+[ext_resource path="res://Assets/SoldierLimbs/Torso.png" type="Texture" id=7]
+[ext_resource path="res://Assets/SoldierLimbs/RightUpperArm.png" type="Texture" id=8]
+[ext_resource path="res://Assets/SoldierLimbs/RightForArm.png" type="Texture" id=9]
+[ext_resource path="res://Assets/SoldierLimbs/RightWrist.png" type="Texture" id=10]
+[ext_resource path="res://Assets/SoldierLimbs/LeftUpperArm.png" type="Texture" id=11]
+[ext_resource path="res://Assets/SoldierLimbs/LeftForArm.png" type="Texture" id=12]
+[ext_resource path="res://Assets/SoldierLimbs/LeftWrist.png" type="Texture" id=13]
+[ext_resource path="res://Assets/SoldierLimbs/Head.png" type="Texture" id=14]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Textures" type="Sprite"]
+editor/display_folded = true
+position = Vector2( -45.3279, 12.9509 )
+
+[node name="LowerParts" type="Sprite" parent="."]
+centered = false
+
+[node name="ThighR" type="Sprite" parent="LowerParts"]
+position = Vector2( -16.6698, 78.0506 )
+rotation = -0.067564
+texture = ExtResource( 1 )
+offset = Vector2( -1.01821, 84.9689 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="CalfR" type="Sprite" parent="LowerParts/ThighR"]
+position = Vector2( -22.0011, 152.941 )
+scale = Vector2( 1.08777, 1.00404 )
+z_index = -1
+texture = ExtResource( 2 )
+offset = Vector2( 3.75156, 81.1333 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="FeetR" type="Sprite" parent="LowerParts/ThighR/CalfR"]
+position = Vector2( -4.67096, 162.041 )
+texture = ExtResource( 3 )
+offset = Vector2( 23.8145, 13.6038 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="RLTerm" type="Position2D" parent="LowerParts/ThighR/CalfR/FeetR"]
+position = Vector2( 46.7323, 19.8228 )
+rotation = -7.93704
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="ThighL" type="Sprite" parent="LowerParts"]
+position = Vector2( 37.1026, 90.5455 )
+z_index = -1
+texture = ExtResource( 4 )
+offset = Vector2( -0.567766, 72.4528 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="CalfL" type="Sprite" parent="LowerParts/ThighL"]
+position = Vector2( 8.65421, 160.017 )
+z_index = -1
+texture = ExtResource( 5 )
+offset = Vector2( 1.63272, 57.7839 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="FeetL" type="Sprite" parent="LowerParts/ThighL/CalfL"]
+position = Vector2( -4.20924, 127.054 )
+texture = ExtResource( 6 )
+offset = Vector2( 26.4811, 24.9163 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="LLTrem" type="Position2D" parent="LowerParts/ThighL/CalfL/FeetL"]
+position = Vector2( 61.6648, 38.1572 )
+rotation = 0.665969
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="UpperParts" type="Sprite" parent="."]
+position = Vector2( 10.2527, 14.3539 )
+centered = false
+
+[node name="Torso" type="Sprite" parent="UpperParts"]
+position = Vector2( 0, 44.4318 )
+texture = ExtResource( 7 )
+offset = Vector2( -7.146, -120.842 )
+
+[node name="HeadLRhands" type="Sprite" parent="UpperParts/Torso"]
+position = Vector2( -14.1395, -240.607 )
+offset = Vector2( -0.73123, 259.877 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="RH" type="Sprite" parent="UpperParts/Torso/HeadLRhands"]
+position = Vector2( -57.3749, 12.045 )
+z_index = 1
+texture = ExtResource( 8 )
+offset = Vector2( -23.9132, 134.345 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="RFA" type="Sprite" parent="UpperParts/Torso/HeadLRhands/RH"]
+position = Vector2( -34.9255, 129.262 )
+texture = ExtResource( 9 )
+offset = Vector2( -6.74298, 56.7161 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Wrist" type="Sprite" parent="UpperParts/Torso/HeadLRhands/RH/RFA"]
+position = Vector2( -20.5397, 116.368 )
+rotation = 0.510961
+texture = ExtResource( 10 )
+offset = Vector2( -3.94963, 7.34767 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="RHTrem" type="Position2D" parent="UpperParts/Torso/HeadLRhands/RH/RFA/Wrist"]
+position = Vector2( -5.32858, 13.1589 )
+rotation = 1.75454
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="UpperParts/Torso/HeadLRhands/RH/RFA/Wrist"]
+polygon = PoolVector2Array( -2.41437, 16.8258, -3.90941, 6.44205, 168.16, -1.12839, 168.933, 8.6041 )
+
+[node name="LH" type="Sprite" parent="UpperParts/Torso/HeadLRhands"]
+position = Vector2( 62.4911, -4.06347 )
+z_index = -1
+texture = ExtResource( 11 )
+offset = Vector2( 23.4981, 49.2675 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="LFA" type="Sprite" parent="UpperParts/Torso/HeadLRhands/LH"]
+position = Vector2( 54.2066, 103.091 )
+texture = ExtResource( 12 )
+offset = Vector2( 29.4215, 50.9701 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Wrist" type="Sprite" parent="UpperParts/Torso/HeadLRhands/LH/LFA"]
+position = Vector2( 63.5247, 100.936 )
+rotation = 0.0609747
+texture = ExtResource( 13 )
+offset = Vector2( 6.82286, 10.4827 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="LHTrem" type="Position2D" parent="UpperParts/Torso/HeadLRhands/LH/LFA/Wrist"]
+position = Vector2( 9.63376, 17.2387 )
+rotation = 0.300872
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="UpperParts/Torso/HeadLRhands/LH/LFA/Wrist/LHTrem"]
+visible = false
+position = Vector2( -1.24802, -15.7631 )
+polygon = PoolVector2Array( -6.28814, 10.2517, -0.640022, 17.8273, 165.442, -138.978, 158.099, -144.723 )
+
+[node name="BulletSpawn" type="Position2D" parent="UpperParts/Torso/HeadLRhands/LH/LFA"]
+editor/display_folded = true
+position = Vector2( -114.574, 171.633 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperParts/Torso/HeadLRhands/LH/LFA/BulletSpawn"]
+shape = SubResource( 1 )
+
+[node name="BulletSpawn2" type="Position2D" parent="UpperParts/Torso/HeadLRhands/LH/LFA"]
+editor/display_folded = true
+position = Vector2( -173.025, 197.701 )
+rotation = 3.45053
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperParts/Torso/HeadLRhands/LH/LFA/BulletSpawn2"]
+shape = SubResource( 1 )
+
+[node name="Head" type="Sprite" parent="UpperParts/Torso/HeadLRhands"]
+position = Vector2( -2.54614, -1.98817 )
+rotation = -0.0347001
+texture = ExtResource( 14 )
+offset = Vector2( 22.0893, -111.821 )
+
+[node name="HTerm" type="Position2D" parent="UpperParts/Torso/HeadLRhands/Head"]
+position = Vector2( 10.5069, -147.045 )
+rotation = -2.56642
+__meta__ = {
+"_edit_bone_": true
+}
